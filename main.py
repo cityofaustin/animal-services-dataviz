@@ -40,6 +40,17 @@ def main():
 	data['d_is_cat_or_dog'] = data.apply (lambda data: der.identify_cats_and_dogs(data.animal_type),axis=1)
 	data['d_age_in_weeks'] = data.apply (lambda data: der.calc_animal_age_in_weeks(data.datetime, data.date_of_birth),axis=1)
 	data['d_age_group'] = data.apply (lambda data: der.determine_age_group(data.d_age_in_weeks, data.d_is_cat_or_dog),axis=1)
+	data['d_month_year_sort'] = data.apply (lambda data: der.get_month_year_sort(data.datetime),axis=1)
+	data['d_month_year_label'] = data.apply (lambda data: der.get_month_year_label(data.datetime),axis=1)
+
+
+	"""
+	group dataframe by month-years
+	"""
+
+	monthly_data = data.groupby(['d_month_year_sort', 'd_month_year_label']).count()
+	print(monthly_data)
+
 
 
 if __name__ == '__main__':

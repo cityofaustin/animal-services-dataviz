@@ -47,14 +47,24 @@ class DeriveNewValues(object):
         
 	def determine_age_group(age_in_weeks, animal_type_test):
 		if animal_type_test ==0:
-			d_age_group = 'not cat or dog'
+			age_group = 'not cat or dog'
 		else:
 			if 0 < age_in_weeks < 6:
-				d_age_group = 'neonate'
+				age_group = 'neonate'
 			elif 6 <= age_in_weeks < 52:
-				d_age_group = 'kitten/puppy'
+				age_group = 'kitten/puppy'
 			elif 52 <= age_in_weeks:
-				d_age_group = 'adult'
+				age_group = 'adult'
 			else:
-				d_age_group = 'unable_to_determine'
-		return d_age_group
+				age_group = 'unable_to_determine'
+		return age_group
+
+	def get_month_year_label(date_of_outcome):
+		d = date(int(date_of_outcome[0:4]),int(date_of_outcome[5:7]),int(date_of_outcome[8:10]))
+		month_year_label = d.strftime("%Y-%b")
+		return month_year_label
+
+	def get_month_year_sort(date_of_outcome):
+		d = date(int(date_of_outcome[0:4]),int(date_of_outcome[5:7]),int(date_of_outcome[8:10]))
+		month_year_sort = d.strftime("%Y-%m")
+		return month_year_sort
