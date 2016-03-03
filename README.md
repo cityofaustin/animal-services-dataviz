@@ -1,7 +1,11 @@
 # Data for animal services
 
+*status:* under development!
+
 ## What this is
 This repo contains scripts that will fetch data about animal services from data.austintexas.gov and process it. Ideally, the processed data will be also be published to data.austintexas.gov so it can be accessed by the public.
+
+Some info about the kinds of charts and graphs animal services would like to see can be found [here](https://github.com/cityofaustin/open-data-consults/issues/1).
 
 ## Why we are doing this
 We want to build data visualizations for Austin's Animal Services website. The raw animal services data at data.austintexas.gov has more details than we need, and this can make the webpage take longer to load. By processing the raw data in a step-by-step way and sharing the code on GitHub, we're hoping to achieve the following: 
