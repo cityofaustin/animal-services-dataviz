@@ -1,3 +1,5 @@
+#! bin/python3
+
 from datetime import datetime, date
 import numpy as np
 import pandas as pd
